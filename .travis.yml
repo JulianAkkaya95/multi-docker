@@ -14,7 +14,6 @@ after_success:
   - docker build -t julianakk/multi-client ./server
   - docker build -t julianakk/multi-client ./worker
   # Log in to docker CLI
-  - docker login DOCKER_ID@DOCKER_PASSWORD
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #Take those images and push them to docker hub
   - docker push julianakk/multi-client

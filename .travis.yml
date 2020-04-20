@@ -10,9 +10,9 @@ script:
 
 after_success:
   - docker build -t julianakk/multi-client ./client
-  - docker build -t julianakk/multi-client ./nginx
-  - docker build -t julianakk/multi-client ./server
-  - docker build -t julianakk/multi-client ./worker
+  - docker build -t julianakk/multi-nginx ./nginx
+  - docker build -t julianakk/multi-server ./server
+  - docker build -t julianakk/multi-worker ./worker
   # Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #Take those images and push them to docker hub

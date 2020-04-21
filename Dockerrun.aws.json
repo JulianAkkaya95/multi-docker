@@ -1,6 +1,6 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "ContaierDefinitions": [
+  "contaierDefinitions": [
     {
       "name": "client",
       "image": "julianakk/multi-client",

@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerVersion": 2,
+  "ContaierDefinitions": [
+    {
+      "name": "client",
+      "image": "julianakk/multi-client",
+      "hostname": "client",
+      "essentail": false
+    },
+    {
+      "name": "server",
+      "image": "julianakk/multi-server",
+      "hostname": "api",
+      "essentail": false
+    },
+    {
+      "name": "worker",
+      "image": "julianakk/multi-worker",
+      "hostname": "worker",
+      "essentail": false
+    },
+    {
+      "name": "nginx",
+      "image": "julianakk/multi-nginx",
+      "essentail": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "server"]
+    }
+  ]
+}
